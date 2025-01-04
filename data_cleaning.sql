@@ -154,19 +154,19 @@ and t2.industry is not null;
 ---Here we are checking wether both total_laid_off and percentage_laid_off are null 
 
 SELECT *
-FROM world_layoffs.layoffs_staging2
+FROM layoffs_staging2
 WHERE total_laid_off IS NULL
 AND percentage_laid_off IS NULL;
 ---if it is null then it is of no use so we are deleting the rows
 -- Delete Useless data we can't really use
-DELETE FROM world_layoffs.layoffs_staging2
+DELETE FROM layoffs_staging2
 WHERE total_laid_off IS NULL
 AND percentage_laid_off IS NULL;
 
 SELECT * 
-FROM world_layoffs.layoffs_staging2;
+FROM layoffs_staging2;
 ---the row_number column we created before is also not needed so wwe are dropping that column
 ALTER TABLE layoffs_staging2
 DROP COLUMN row_num;
 SELECT * 
-FROM world_layoffs.layoffs_staging2;
+FROM .layoffs_staging2;
